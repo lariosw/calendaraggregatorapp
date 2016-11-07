@@ -41,7 +41,7 @@ require('jit-grunt')(grunt, {
       },
       pages: {
         options: {
-          remote: 'git@github.com:lariosw/calendaraggregatorapp.git',
+          remote: 'https://github.com/lariosw/calendaraggregatorapp.git',
           branch: 'gh-pages'
         }
       }
