@@ -3,3 +3,7 @@
 /.tmp
 /.sass-cache
 /bower_components
+.idea/calendaraggregatorapp.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
