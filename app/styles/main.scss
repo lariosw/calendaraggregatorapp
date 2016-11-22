@@ -27,6 +27,9 @@ body {
 .header {
   border-bottom: 1px solid $primary-border-color;
   margin-bottom: 10px;
+    div.navbar-default {
+      background-color: lightseagreen;
+    }
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -40,7 +43,7 @@ body {
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
+  color: black;
   border-top: 1px solid $primary-border-color;
 }
 
@@ -80,6 +83,7 @@ body {
         width: 175px;
         font-size: small;
     }
+
     dl {
         width: 500px;
         top-padding: 10px;
@@ -93,6 +97,12 @@ body {
   p + h4 {
     margin-top: 28px;
   }
+}
+
+a.navbar-brand {
+  font-family: sans-serif;
+  font-size: 30px;
+  margin-right: 100px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -112,7 +122,6 @@ body {
 
   }
 
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -127,6 +136,40 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+    width: 700px;
+      h1 {
+        margin-top: 10px;
+      }
+  }
+.nav li:hover {
+    background-color: yellow;
+  }
+.nav li.active:hover {
+    background-color: yellow;
+}
+
+  div.saved-buttons.ng-scope {
+    width: 200px;
+    float: right;
+     h2 {
+      background-color: black;
+       height: 60px;
+       color: white;
+     }
+    a.btn {
+      width: 200px;
+
+    }
+  }
+  dl.weather-forecast.ng-scope:hover {
+    background: darkblue;
+    color: white;
+  }
+
+
+  .jumbotron.ng-scope {
+    float: left;
+    border: 2px solid black;
   }
 
   dl.weather-forecast {
@@ -138,4 +181,14 @@ body {
     display: inline-block;
     margin: 10px;
   }
+
+
+  ul.saved-cities-list {
+    list-style: none;
+  }
+
+  li.ng-scope {
+    margin: 5px;
+  }
+
 }

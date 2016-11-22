@@ -22,7 +22,5 @@ angular.module('calendaraggregatorappApp')
     };
 
     $scope.storage = $localStorage;
-
   });
-
 

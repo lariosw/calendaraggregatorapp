@@ -46,7 +46,7 @@ require('jit-grunt')(grunt, {
         }
       }
     },
-      
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -67,7 +67,7 @@ require('jit-grunt')(grunt, {
     sass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['sass:server']
-    },      
+    },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -240,8 +240,8 @@ require('jit-grunt')(grunt, {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
-    }, 
-      
+    },
+
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
         options: {
@@ -465,7 +465,7 @@ require('jit-grunt')(grunt, {
         'svgmin'
       ]
     },
-      
+
     // Test settings
     karma: {
       unit: {
@@ -530,7 +530,7 @@ require('jit-grunt')(grunt, {
     'test',
     'build'
   ]);
-    
-    
+
+
 
 };

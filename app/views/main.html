@@ -1,5 +1,5 @@
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
-  <h1>Select Your City</h1>
+  <h1>How is the weather in...</h1>
   <div class="lead">
     <div ng-init="location='Seattle'">
         <p>
@@ -12,8 +12,8 @@
         </p>
       </div>
         <div ng-if="searchQuery">
-        <p class="lead">{{citiesFound.count}} cities found matching the query: {{searchQuery}}.</p>
-        <dl ng-repeat="city in citiesFound.list">
+        <p class="lead lead-found">{{citiesFound.count}} cities found matching the query: {{searchQuery}}.</p>
+        <dl class="found-cities" ng-repeat="city in citiesFound.list">
             <dt>{{city.name}}, {{city.sys.country}}</dt>
             <dd>{{city.weather[0].main}} - {{city.weather[0].description}}</dd>
             <dt>Temperature</dt>
@@ -24,8 +24,10 @@
     </div>
 </div>
 
-<div ng-if="storage.savedCities">
+<div ng-if="storage.savedCities" class="saved-buttons">
+
   <h2>Saved Cities</h2>
+
   <ul class="saved-cities-list">
     <li ng-repeat="city in storage.savedCities">
       <a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
