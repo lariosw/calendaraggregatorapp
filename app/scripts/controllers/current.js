@@ -11,6 +11,8 @@ angular.module('calendaraggregatorappApp')
   .controller('CurrentCtrl', function ($scope, $routeParams, current, $localStorage) {
     $scope.cityID = $routeParams.cityID;
 
+    $scope.alerts = [];
+
     $scope.currentWeather = current.query({
       cityID: $routeParams.cityID
     });
@@ -35,10 +37,18 @@ angular.module('calendaraggregatorappApp')
         }
         if (save===true){
           $localStorage.savedCities.push(cityData);
+          //display success alert
+          $scope.alerts.push({msg: 'Success! City saved.', type: 'success'});
         } else {
-          console.log('cityalready saved');
+          $scope.alerts.push({msg: 'City was already saved.', type: 'warning'});
         }
       }
+
+    };
+
+
+    $scope.closeAlert = function(index) {
+      $scope.alerts.splice(index, 1);
     };
 
   });

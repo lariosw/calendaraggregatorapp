@@ -1,5 +1,11 @@
-<h1>Current Weather for {{currentWeather.name}}</h1>
+<!--Start Alert Html -->
+<script type="text/ng-template" id="alert.html">
+  <div ng-transclude></div>
+</script>
+<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
+<!-- End Alert Html -->
 
+<h1>Current Weather for {{currentWeather.name}}</h1>
 <dl>
   <dt>Currently</dt>
   <dd>{{currentWeather.weather[0].main}}</dd>
