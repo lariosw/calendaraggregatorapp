@@ -22,5 +22,8 @@ angular.module('calendaraggregatorappApp')
     };
 
     $scope.storage = $localStorage;
+    $scope.remove = function (index) {
+      $scope.storage.savedCities.splice(index, 1);
+    };
   });
 

@@ -1,3 +1,55 @@
+<!-- CAROUSEL OF PHOTOS -->
+
+
+<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" class="main-carousel">
+  <div uib-slide  index="0">
+    <img src="images/carousel/seattle.jpeg"  style="margin:auto;">
+    <div class="carousel-caption">
+      <h4>Seattle, Wa</h4>
+      <a href="/#/current/5809844">See Weather</a>
+    </div>
+  </div>
+
+
+  <div uib-slide  index="1">
+    <img src="images/carousel/ny.jpeg"  style="margin:auto;">
+    <div class="carousel-caption">
+      <h4>New York, Ny</h4>
+      <a href="/#/current/5128581">See Weather</a>
+    </div>
+  </div>
+
+
+  <div uib-slide  index="2">
+    <img src="images/carousel/la.jpg"  style="margin:auto;">
+    <div class="carousel-caption">
+      <h4>Los Angeles, Ca</h4>
+      <a href="/#/current/5368361">See Weather</a>
+    </div>
+  </div>
+
+  <div uib-slide  index="3">
+    <img src="images/carousel/lasvegas.jpeg"  style="margin:auto;">
+    <div class="carousel-caption">
+      <h4>Las Vegas, Nv</h4>
+      <a href="/#/current/5506956">See Weather</a>
+    </div>
+  </div>
+
+</div>
+
+<div ng-if="storage.savedCities && storage.savedCities.length > 0" class="saved-buttons">
+
+  <h2>Saved Cities</h2>
+
+  <ul class="saved-cities-list">
+    <li ng-repeat="city in storage.savedCities">
+      <a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
+      <button ng-click="remove($index)">Remove</button>
+    </li>
+  </ul>
+</div>
+
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
   <h1>How is the weather in...</h1>
   <div class="lead">
@@ -24,14 +76,5 @@
     </div>
 </div>
 
-<div ng-if="storage.savedCities" class="saved-buttons">
 
-  <h2>Saved Cities</h2>
-
-  <ul class="saved-cities-list">
-    <li ng-repeat="city in storage.savedCities">
-      <a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
-    </li>
-  </ul>
-</div>
 
