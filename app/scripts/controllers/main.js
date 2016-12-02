@@ -11,8 +11,9 @@
 
 angular.module('calendaraggregatorappApp')
   .controller('MainCtrl', function ($scope, citysearch, $localStorage) {
-    $scope.citiesFound = citysearch.find();
+    $scope.citiesFound = [];
     $scope.storage = $localStorage;
+    $scope.showSavedCities = false;
 
     $scope.findCities = function(){
         $scope.citiesFound = citysearch.find({

@@ -1,80 +1,111 @@
 <!-- CAROUSEL OF PHOTOS -->
 
 
-<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" class="main-carousel">
-  <div uib-slide  index="0">
-    <img src="images/carousel/seattle.jpeg"  style="margin:auto;">
-    <div class="carousel-caption">
-      <h4>Seattle, Wa</h4>
-      <a href="/#/current/5809844">See Weather</a>
-    </div>
-  </div>
 
-
-  <div uib-slide  index="1">
-    <img src="images/carousel/ny.jpeg"  style="margin:auto;">
-    <div class="carousel-caption">
-      <h4>New York, Ny</h4>
-      <a href="/#/current/5128581">See Weather</a>
-    </div>
-  </div>
-
-
-  <div uib-slide  index="2">
-    <img src="images/carousel/la.jpg"  style="margin:auto;">
-    <div class="carousel-caption">
-      <h4>Los Angeles, Ca</h4>
-      <a href="/#/current/5368361">See Weather</a>
-    </div>
-  </div>
-
-  <div uib-slide  index="3">
-    <img src="images/carousel/lasvegas.jpeg"  style="margin:auto;">
-    <div class="carousel-caption">
-      <h4>Las Vegas, Nv</h4>
-      <a href="/#/current/5506956">See Weather</a>
-    </div>
-  </div>
-
-</div>
-
-<div ng-if="storage.savedCities && storage.savedCities.length > 0" class="saved-buttons">
-
-  <h2>Saved Cities</h2>
-
-  <ul class="saved-cities-list">
-    <li ng-repeat="city in storage.savedCities">
-      <a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
-      <button ng-click="remove($index)">Remove</button>
-    </li>
-  </ul>
-</div>
 
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
-  <h1>How is the weather in...</h1>
-  <div class="lead">
-    <div ng-init="location='Seattle'">
-        <p>
-          <label for="location">Location:
-            <input id="location" type="text" name="location" ng-model="location">
-          </label>
-        </p>
-        <p>
-          <button class="btn btn-lg btn-primary" ng-click="findCities()">Find City</button>
-        </p>
+  <div>
+    <div class="search-wrapper">
+      <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" class="main-carousel">
+        <div uib-slide  index="0">
+          <img src="images/carousel/seattle.jpeg"  style="margin:auto;">
+          <div class="carousel-caption">
+            <h4>Seattle, Wa</h4>
+            <a href="/#/current/5809844">See Weather</a>
+          </div>
+        </div>
+
+
+        <div uib-slide  index="1">
+          <img src="images/carousel/ny.jpeg"  style="margin:auto;">
+          <div class="carousel-caption">
+            <h4>New York, Ny</h4>
+            <a href="/#/current/5128581">See Weather</a>
+          </div>
+        </div>
+
+
+        <div uib-slide  index="2">
+          <img src="images/carousel/la.jpg"  style="margin:auto;">
+          <div class="carousel-caption">
+            <h4>Los Angeles, Ca</h4>
+            <a href="/#/current/5368361">See Weather</a>
+          </div>
+        </div>
+
+        <div uib-slide  index="3">
+          <img src="images/carousel/lasvegas.jpeg"  style="margin:auto;">
+          <div class="carousel-caption">
+            <h4>Las Vegas, Nv</h4>
+            <a href="/#/current/5506956">See Weather</a>
+          </div>
+        </div>
+
       </div>
-        <div ng-if="searchQuery">
-        <p class="lead lead-found">{{citiesFound.count}} cities found matching the query: {{searchQuery}}.</p>
-        <dl class="found-cities" ng-repeat="city in citiesFound.list">
+
+      <div class="search-inner">
+        <h1>How is the weather in...</h1>
+        <div class="lead">
+          <div>
+            <p>
+              <label for="location">Location:
+                <input id="location" type="text" name="location" ng-model="location">
+              </label>
+            </p>
+            <p>
+              <button class="btn btn-lg btn-primary" ng-click="findCities()">Find City</button>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="storage.savedCities && storage.savedCities.length > 0">
+    <div class="saved-cities">
+      <span class="glyphicon glyphicon-plus" ng-click="showSavedCities = true" ng-show="showSavedCities == false"></span>
+      <span class="glyphicon glyphicon-minus" ng-click="showSavedCities = false" ng-show="showSavedCities == true"></span>
+      <span ng-show="showSavedCities == true">Hide Saved Cities</span>
+      <span ng-show="showSavedCities == false">View Saved Cities</span>
+    </div>
+
+    <div class="results-container" ng-show="showSavedCities == true">
+      <ul >
+          <li ng-repeat="city in storage.savedCities">
+            <a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
+            <button ng-click="remove($index)">Remove</button>
+          </li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="results-cnt" ng-if="searchQuery">
+    <p class="lead lead-found">{{citiesFound.count}} cities found matching the query: {{searchQuery}}.</p>
+  </div>
+
+  <div class="row results-wrapper">
+
+          <dl class="col-xs-4 found-cities" ng-repeat="city in citiesFound.list">
+            <div class="outer-box">
+            <div class="selected-city">
             <dt>{{city.name}}, {{city.sys.country}}</dt>
             <dd>{{city.weather[0].main}} - {{city.weather[0].description}}</dd>
             <dt>Temperature</dt>
             <dd>{{city.main.temp}} &deg;F</dd>
+            <img ng-src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png"/>
             <dd><a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">View Weather</a></dd>
+            </div>
+            </div>
         </dl>
-        </div>
-    </div>
+      </div>
+
+
 </div>
+
+
+
 
 
 
