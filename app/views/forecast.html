@@ -1,12 +1,21 @@
-<h1>16-day Forecast for {{forecastData.city.name}} {{forecastData.city.country}}</h1>
-<dl ng-repeat="prediction in forecastData.list" class="weather-forecast">
-  <dt>Forecast for {{prediction.dt*1000 | date: 'MMM dd, yyyy'}}</dt>
-  <dd>{{prediction.weather[0].main}}</dd>
-  <dd>{{prediction.weather[0].description}}</dd>
-  <dt>Temperature</dt>
-  <dd>Min: {{prediction.temp.min}} &deg;F Max: {{prediction.temp.max}} &deg;F</dd>
+<h1 class="row sixteen-day" 16-day Forecast for castData.city.name}} {{forecastData.city.country}}>16 Day Forecast</h1>
+<dl ng-repeat="prediction in forecastData.list" class="col-xs-2 weather-forecast">
+  <dt>{{prediction.dt*1000 | date: 'MMM dd, yyyy'}}</dt>
+  <div class="weather-details">
+    <dd>{{prediction.weather[0].main}}</dd>
+    <dd>{{prediction.weather[0].description}}</dd>
+  </div>
+
+    <dt>Temperature</dt>
+    <dd>Min: {{prediction.temp.min}} &deg;F Max: {{prediction.temp.max}} &deg;F</dd>
+
 </dl>
+</div>
 
-<p><a ng-href="#/current/{{cityID}}" class="btn btn-lg btn-primary">View Current Weather</a></p>
-<p><a ng-href="#/" class="btn btn-lg btn-primary">Return to Search</a></p>
+<div class="current-btn">
+  <p><a ng-href="#/current/{{cityID}}" class="btn btn-lg btn-primary"> 	&lt; View Current Weather</a></p>
+</div>
 
+  <div class="returntomain-btn">
+    <p><a ng-href="#/" class="btn btn-lg btn-primary">Return to Search &#62; </a></p>
+</div>

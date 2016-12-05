@@ -45,6 +45,14 @@ body {
   }
 }
 
+.home-header {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 0px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -315,6 +323,7 @@ margin-left: 20px;
 .header-current {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  margin: 10px;
 }
 
 .weatherphoto {
@@ -325,9 +334,77 @@ margin-left: 20px;
 .weather-info {
   width: 300px;
   float: left;
-  margin-left: 140px;
+  margin: 10px 0px 0px 140px ;
+  border: 2px solid black;
+  border-radius: 6px;
+  background-color: white;
+  dt {
+    font-family: monospace;
+    font-size: 20px;
+  }
 }
 
 .save-city {
   float: right;
+  margin: 10px 45px 0px 0px;
+
+}
+
+.weather-sub1{
+  margin-bottom: 15px;
+}
+
+.weather-sub2{
+  margin-bottom: 15px;
+}
+
+.weather-sub3{
+  margin-bottom: 15px;
+}
+
+.return-button {
+  float: left;
+}
+.bottom-navbtn  a {
+  margin: 10px 0px 10px 200px;
+   }
+
+dl.weather-forecast {
+  margin: 5px;
+  background-color: white;
+  border-radius: 6px;
+  dt {
+    font-family: monospace;
+  }
+}
+
+.weather-details {
+  margin-bottom: 10px;
+}
+
+.sixteen-day {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 0px;
+}
+
+.current-btn {
+  float: left;
+}
+.returntomain-btn {
+  margin: 10px 0px 10px 200px;
+}
+
+.about-header {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 0px;
+  margin-top: 0px;
+}
+.about-container a {
+  float: left;
+  margin-right: 20px;
+}
+.about-container {
+  margin-bottom: 20px;
 }

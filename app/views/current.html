@@ -1,3 +1,7 @@
+<div class="header-current">
+<h1>Current Weather for {{currentWeather.name}}</h1>
+</div>
+
 <!--Start Alert Html -->
 <script type="text/ng-template" id="alert.html">
   <div ng-transclude></div>
@@ -5,9 +9,6 @@
 <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
 <!-- End Alert Html -->
 
-<div class="header-current">
-<h1>Current Weather for {{currentWeather.name}}</h1>
-</div>
 
 <div class="container-current">
   <div class="weatherphoto">
@@ -16,15 +17,27 @@
 
   <div class="weather-info">
     <dl>
+      <div class="weather-sub1">
       <dt>Currently</dt>
       <dd>{{currentWeather.weather[0].main}}</dd>
       <dd>{{currentWeather.weather[0].description}}</dd>
+      </div>
+
+      <div class="weather-sub2">
       <dt>Temperature</dt>
       <dd>{{currentWeather.main.temp}} &deg;F</dd>
+      </div>
+
+      <div class="weather-sub3">
       <dt>Wind</dt>
       <dd>{{currentWeather.wind.speed}} mph at {{currentWeather.wind.deg}} &deg;</dd>
+        </div>
+
+        <div class="weather-sub3">
       <dt>Clouds</dt>
       <dd>{{currentWeather.clouds.all}}%</dd>
+      </div>
+
     </dl>
   </div>
 
@@ -39,7 +52,7 @@
   </div>
 
   <div class="16-day">
-    <a ng-href="#/forecast/{{cityID}}" class="btn btn-lg btn-primary">View 16-day Forecast</a>
+    <a ng-href="#/forecast/{{cityID}}" class="btn btn-lg btn-primary">View 16-day Forecast 	&#62; </a>
   </div>
 </div>
 
