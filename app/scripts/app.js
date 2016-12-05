@@ -19,7 +19,8 @@ angular
     'ngSanitize',
     'ngStorage', // added to enable localStorage features
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'openlayers-directive'
   ])
   .config(function ($routeProvider) {
     $routeProvider

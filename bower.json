@@ -13,7 +13,9 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "ngstorage": "^0.3.11",
-    "angular-bootstrap": "^2.2.0"
+    "angular-bootstrap": "^2.2.0",
+    "bower-ol3": "ol3#^3.4.0",
+    "angular-openlayers-directive": "^1.17.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
