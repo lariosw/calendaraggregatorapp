@@ -1,4 +1,5 @@
 <h1 class="row sixteen-day" >16-day Forecast for {{castData.city.name}} {{forecastData.city.country}}</h1>
+
 <dl ng-repeat="prediction in forecastData.list" class="col-xs-2 weather-forecast">
   <dt>{{prediction.dt*1000 | date: 'MMM dd, yyyy'}}</dt>
   <div class="weather-details">
@@ -11,11 +12,12 @@
 
 </dl>
 
+<div class="forecast-btns">
+  <div class="current-btn">
+    <a ng-href="#/current/{{cityID}}" class="btn btn-lg btn-primary"> 	&lt; View Current Weather</a>
+  </div>
 
-<div class="current-btn">
-  <p><a ng-href="#/current/{{cityID}}" class="btn btn-lg btn-primary"> 	&lt; View Current Weather</a></p>
-</div>
-
-  <div class="returntomain-btn">
-    <p><a ng-href="#/" class="btn btn-lg btn-primary">Return to Search &#62; </a></p>
+    <div class="returntomain-btn">
+      <a ng-href="#/" class="btn btn-lg btn-primary">Return to Search &#62; </a>
+  </div>
 </div>

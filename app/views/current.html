@@ -11,12 +11,15 @@
 
 
 <div class="container-current">
-  <div class="weatherphoto">
-   <img src="images/weatherimg.jpg">
+
+  <div class="temp-aside">
+    {{currentWeather.name}}
+    <dt>Temperature</dt>
+    <dd>{{currentWeather.main.temp}} &deg;F</dd>
+    <img ng-src="http://openweathermap.org/img/w/{{currentWeather.weather[0].icon}}.png"/>
   </div>
 
   <div class="weather-info">
-    <dl>
       <div class="weather-sub1">
       <dt>Currently</dt>
       <dd>{{currentWeather.weather[0].main}}</dd>
@@ -24,11 +27,6 @@
       </div>
 
       <div class="weather-sub2">
-      <dt>Temperature</dt>
-      <dd>{{currentWeather.main.temp}} &deg;F</dd>
-      </div>
-
-      <div class="weather-sub3">
       <dt>Wind</dt>
       <dd>{{currentWeather.wind.speed}} mph at {{currentWeather.wind.deg}} &deg;</dd>
         </div>
@@ -37,14 +35,13 @@
       <dt>Clouds</dt>
       <dd>{{currentWeather.clouds.all}}%</dd>
       </div>
-
-    </dl>
   </div>
+</div>
 
   <div class="save-city">
     <button class="btn btn-sm btn-primary" ng-click="saveCity(currentWeather)">Save City</button>
   </div>
-</div>
+
 
 <div class="bottom-navbtn">
   <div class="return-button">

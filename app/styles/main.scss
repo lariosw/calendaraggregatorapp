@@ -27,6 +27,8 @@ body {
   padding-right: 15px;
 }
 
+
+
 /* Custom page header */
 .header {
 
@@ -59,6 +61,10 @@ body {
   color: black;
   border-top: 1px solid $primary-border-color;
 }
+footer .container {
+  height: 150px;
+}
+
 
 .container-narrow > hr {
   margin: 30px 0;
@@ -159,8 +165,8 @@ a.navbar-brand {
     }
     .search-inner {
       overflow: hidden;
-      max-height: 100%;
-background-color: white;
+      height: 100%;
+      background-color: white;
       .btn {
         margin-top: -5px;
       }
@@ -246,7 +252,7 @@ div .outer-box {
   }
   footer {
     margin-top: 0;
-    background: black;
+    background: #2a2a2a;
     #address ul {
       padding: 0;
     }
@@ -256,11 +262,24 @@ div .outer-box {
   }
   footer .bottom-nav {
     vertical-align: top;
-    margin: 55px;
+    margin: 25px 55px;
+    p {
+      color: black;
+      font-weight: 500;
+    }
+    li {
+      display: inline-block;
+      }
   }
+footer .bottom-nav ul{
+padding-left:0px;
+}
+
+
   footer .bottom-nav h3 {
     color: white;
   }
+
 
   /* carousel styles */
 
@@ -292,11 +311,16 @@ div .outer-box {
 
 .results-container {
   transition: all linear 0.5s;
-  height: 100px;
   width: 100%;
   position: relative;
   top: 0;
   left: 0;
+
+  .city-link {
+    color: black;
+    font-size: 25px;
+    margin-left: 5px;
+  }
 
     &.ng-hide {
       height: 0;
@@ -306,13 +330,35 @@ div .outer-box {
       left: 200px;
   }
   li {
-    width: 200px;
+    width: 220px;
+  }
+
+  a{
+    text-decoration: underline;
   }
 
 }
 
 .container-current {
-margin-left: 20px;
+  margin-left: 180px;
+  margin-bottom: 15px;
+  .temp-aside {
+    background-color: #87CEFA;
+    font-size: 45px;
+    float: left;
+    width: 300px;
+    height: 213px;
+    margin: 10px 0px 0px 0px;
+    padding-left: 20px;
+    border: 2px solid black;
+    img {
+      margin: -20px -30px 20px 30px;
+    }
+    dt {
+      font-family: monospace;
+      font-size: 20px;
+    }
+  }
 }
 
 .saved-cities {
@@ -334,10 +380,11 @@ margin-left: 20px;
 .weather-info {
   width: 300px;
   float: left;
-  margin: 10px 0px 0px 140px ;
+  margin: 10px 0px 0px 0px ;
+  padding-left: 20px;
   border: 2px solid black;
-  border-radius: 6px;
   background-color: white;
+  border-left:none;
   dt {
     font-family: monospace;
     font-size: 20px;
@@ -365,9 +412,12 @@ margin-left: 20px;
 .return-button {
   float: left;
 }
-.bottom-navbtn  a {
+.bottom-navbtn  {
+ clear: both;
+a {
   margin: 10px 0px 10px 200px;
    }
+}
 
 dl.weather-forecast {
   margin: 5px;
@@ -388,11 +438,8 @@ dl.weather-forecast {
   padding: 10px 0px;
 }
 
-.current-btn {
-  float: left;
-}
-.returntomain-btn {
-  margin: 10px 0px 10px 200px;
+.returntomain-btn a {
+  margin: 10px 220px 10px 100px;
 }
 
 .about-header {
@@ -407,4 +454,22 @@ dl.weather-forecast {
 }
 .about-container {
   margin-bottom: 20px;
+}
+.forecast-btns {
+  clear:both;
+  .current-btn{
+    float:left;
+  }
+  .returntomain-btn{
+    float:right;
+  }
+}
+
+.current-btn a {
+  margin: 10px 100px 10px 100px;
+}
+
+.bottom-navbtn2 {
+  clear: both;
+  padding:10px 0;
 }

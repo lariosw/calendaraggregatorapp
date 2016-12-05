@@ -71,8 +71,8 @@
     <div class="results-container" ng-show="showSavedCities == true">
       <ul >
           <li ng-repeat="city in storage.savedCities">
-            <a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
             <button ng-click="remove($index)">Remove</button>
+            <a ng-href="#/current/{{city.id}}" class="city-link">{{city.name}}</a>
           </li>
         </ul>
     </div>
