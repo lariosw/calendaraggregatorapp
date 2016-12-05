@@ -1,4 +1,4 @@
-<h1 class="row sixteen-day" 16-day Forecast for castData.city.name}} {{forecastData.city.country}}>16 Day Forecast</h1>
+<h1 class="row sixteen-day" >16-day Forecast for {{castData.city.name}} {{forecastData.city.country}}</h1>
 <dl ng-repeat="prediction in forecastData.list" class="col-xs-2 weather-forecast">
   <dt>{{prediction.dt*1000 | date: 'MMM dd, yyyy'}}</dt>
   <div class="weather-details">
@@ -10,7 +10,7 @@
     <dd>Min: {{prediction.temp.min}} &deg;F Max: {{prediction.temp.max}} &deg;F</dd>
 
 </dl>
-</div>
+
 
 <div class="current-btn">
   <p><a ng-href="#/current/{{cityID}}" class="btn btn-lg btn-primary"> 	&lt; View Current Weather</a></p>
